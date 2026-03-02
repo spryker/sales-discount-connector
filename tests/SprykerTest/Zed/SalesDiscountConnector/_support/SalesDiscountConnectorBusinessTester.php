@@ -45,12 +45,6 @@ class SalesDiscountConnectorBusinessTester extends Actor
      */
     protected const FIELD_NAME_CUSTOMER_ORDER_COUNT = 'customer-order-count';
 
-    /**
-     * @param string $operator
-     * @param string $value
-     *
-     * @return \Generated\Shared\Transfer\ClauseTransfer
-     */
     public function createClauseTransfer(string $operator, string $value): ClauseTransfer
     {
         return (new ClauseTransfer())

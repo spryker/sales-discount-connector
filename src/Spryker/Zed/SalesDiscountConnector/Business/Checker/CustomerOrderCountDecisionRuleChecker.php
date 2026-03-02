@@ -31,11 +31,6 @@ class CustomerOrderCountDecisionRuleChecker implements CustomerOrderCountDecisio
      */
     protected SalesDiscountConnectorConfig $salesDiscountConnectorConfig;
 
-    /**
-     * @param \Spryker\Zed\SalesDiscountConnector\Dependency\Facade\SalesDiscountConnectorToDiscountFacadeInterface $discountFacade
-     * @param \Spryker\Zed\SalesDiscountConnector\Dependency\Facade\SalesDiscountConnectorToSalesFacadeInterface $salesFacade
-     * @param \Spryker\Zed\SalesDiscountConnector\SalesDiscountConnectorConfig $salesDiscountConnectorConfig
-     */
     public function __construct(
         SalesDiscountConnectorToDiscountFacadeInterface $discountFacade,
         SalesDiscountConnectorToSalesFacadeInterface $salesFacade,
@@ -46,12 +41,6 @@ class CustomerOrderCountDecisionRuleChecker implements CustomerOrderCountDecisio
         $this->salesDiscountConnectorConfig = $salesDiscountConnectorConfig;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     * @param \Generated\Shared\Transfer\ClauseTransfer $clauseTransfer
-     *
-     * @return bool
-     */
     public function isCustomerOrderCountSatisfiedBy(QuoteTransfer $quoteTransfer, ClauseTransfer $clauseTransfer): bool
     {
         if (!$quoteTransfer->getCustomer() || !$quoteTransfer->getCustomerOrFail()->getIdCustomer()) {
@@ -75,13 +64,6 @@ class CustomerOrderCountDecisionRuleChecker implements CustomerOrderCountDecisio
         return $this->discountFacade->queryStringCompare($clauseTransfer, $customerOrderCount);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     * @param \Generated\Shared\Transfer\OrderListTransfer $orderListTransfer
-     * @param int $customerOrderCount
-     *
-     * @return int
-     */
     protected function excludeCurrentOrderFromCount(
         QuoteTransfer $quoteTransfer,
         OrderListTransfer $orderListTransfer,

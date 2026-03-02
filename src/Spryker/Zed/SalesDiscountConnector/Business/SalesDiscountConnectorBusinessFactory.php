@@ -19,9 +19,6 @@ use Spryker\Zed\SalesDiscountConnector\SalesDiscountConnectorDependencyProvider;
  */
 class SalesDiscountConnectorBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\SalesDiscountConnector\Business\Checker\CustomerOrderCountDecisionRuleCheckerInterface
-     */
     public function createCustomerOrderCountDecisionRuleChecker(): CustomerOrderCountDecisionRuleCheckerInterface
     {
         return new CustomerOrderCountDecisionRuleChecker(
@@ -31,17 +28,11 @@ class SalesDiscountConnectorBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\SalesDiscountConnector\Dependency\Facade\SalesDiscountConnectorToDiscountFacadeInterface
-     */
     public function getDiscountFacade(): SalesDiscountConnectorToDiscountFacadeInterface
     {
         return $this->getProvidedDependency(SalesDiscountConnectorDependencyProvider::FACADE_DISCOUNT);
     }
 
-    /**
-     * @return \Spryker\Zed\SalesDiscountConnector\Dependency\Facade\SalesDiscountConnectorToSalesFacadeInterface
-     */
     public function getSalesFacade(): SalesDiscountConnectorToSalesFacadeInterface
     {
         return $this->getProvidedDependency(SalesDiscountConnectorDependencyProvider::FACADE_SALES);

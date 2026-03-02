@@ -12,11 +12,5 @@ use Generated\Shared\Transfer\QuoteTransfer;
 
 interface CustomerOrderCountDecisionRuleCheckerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     * @param \Generated\Shared\Transfer\ClauseTransfer $clauseTransfer
-     *
-     * @return bool
-     */
     public function isCustomerOrderCountSatisfiedBy(QuoteTransfer $quoteTransfer, ClauseTransfer $clauseTransfer): bool;
 }

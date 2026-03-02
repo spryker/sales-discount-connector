@@ -24,12 +24,6 @@ class SalesDiscountConnectorToSalesFacadeBridge implements SalesDiscountConnecto
         $this->salesFacade = $salesFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\OrderListTransfer $orderListTransfer
-     * @param int $idCustomer
-     *
-     * @return \Generated\Shared\Transfer\OrderListTransfer
-     */
     public function getCustomerOrders(OrderListTransfer $orderListTransfer, int $idCustomer): OrderListTransfer
     {
         return $this->salesFacade->getCustomerOrders($orderListTransfer, $idCustomer);

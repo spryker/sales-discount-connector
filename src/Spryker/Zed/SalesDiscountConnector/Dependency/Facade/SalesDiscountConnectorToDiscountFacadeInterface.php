@@ -11,11 +11,5 @@ use Generated\Shared\Transfer\ClauseTransfer;
 
 interface SalesDiscountConnectorToDiscountFacadeInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ClauseTransfer $clauseTransfer
-     * @param mixed $compareWith
-     *
-     * @return bool
-     */
     public function queryStringCompare(ClauseTransfer $clauseTransfer, mixed $compareWith): bool;
 }

@@ -11,11 +11,5 @@ use Generated\Shared\Transfer\OrderListTransfer;
 
 interface SalesDiscountConnectorToSalesFacadeInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\OrderListTransfer $orderListTransfer
-     * @param int $idCustomer
-     *
-     * @return \Generated\Shared\Transfer\OrderListTransfer
-     */
     public function getCustomerOrders(OrderListTransfer $orderListTransfer, int $idCustomer): OrderListTransfer;
 }

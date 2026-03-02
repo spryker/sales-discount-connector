@@ -61,9 +61,6 @@ class IsCustomerOrderCountSatisfiedByTest extends Unit
      */
     protected const CURRENCY_ISO_CODE = 'CODE';
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -76,9 +73,6 @@ class IsCustomerOrderCountSatisfiedByTest extends Unit
      */
     protected SalesDiscountConnectorBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     public function testShouldBeSatisfiedByCustomerOrderCountWhenOrderCountLessThanOne(): void
     {
         // Arrange
@@ -96,9 +90,6 @@ class IsCustomerOrderCountSatisfiedByTest extends Unit
         $this->assertTrue($isCustomerOrderCountSatisfied);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldNotBeBeSatisfiedByCustomerOrderCountGreaterThanOne(): void
     {
         // Arrange
@@ -116,9 +107,6 @@ class IsCustomerOrderCountSatisfiedByTest extends Unit
         $this->assertFalse($isCustomerOrderCountSatisfied);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldBeSatisfiedByCustomerOrderCountEqualOne(): void
     {
         // Arrange
@@ -143,9 +131,6 @@ class IsCustomerOrderCountSatisfiedByTest extends Unit
         $this->assertTrue($isCustomerOrderCountSatisfied);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldNotBeSatisfiedByCustomerOrderCountWithoutCustomer(): void
     {
         // Arrange
@@ -163,9 +148,6 @@ class IsCustomerOrderCountSatisfiedByTest extends Unit
         $this->assertFalse($isCustomerOrderCountSatisfied);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldNotBeSatisfiedByCustomerOrderCountWithoutIdCustomer(): void
     {
         // Arrange
@@ -183,9 +165,6 @@ class IsCustomerOrderCountSatisfiedByTest extends Unit
         $this->assertFalse($isCustomerOrderCountSatisfied);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldBeSatisfiedByCustomerOrderCountWithExcludedCurrentOrderFromCountConfiguration(): void
     {
         // Arrange
@@ -210,9 +189,6 @@ class IsCustomerOrderCountSatisfiedByTest extends Unit
         $this->assertTrue($isCustomerOrderCountSatisfied);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldNotBeSatisfiedByCustomerOrderCountWithExcludedCurrentOrderFromCountConfigurationAndMissedOrderReference(): void
     {
         // Arrange
@@ -234,11 +210,6 @@ class IsCustomerOrderCountSatisfiedByTest extends Unit
         $this->assertFalse($isCustomerOrderCountSatisfied);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CustomerTransfer $customerTransfer
-     *
-     * @return \Generated\Shared\Transfer\SaveOrderTransfer
-     */
     protected function createOrder(CustomerTransfer $customerTransfer): SaveOrderTransfer
     {
         $quoteTransfer = (new QuoteBuilder())
